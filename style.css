@@ -1,0 +1,124 @@
+body {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main {
+    margin-top: 10%;
+    padding: 20px;
+    width: 100%;
+    border: 2px solid purple;
+    border-radius: 5px;
+}
+
+.tooltip-button {
+    cursor: pointer;
+    position: relative;
+    padding: 1px 8px;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
+
+.tooltip-button::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 4px solid ;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    outline: none;
+}
+
+/* Стили тултипа */
+@keyframes tooltip-opener {
+    0% {
+        transform: translate(50%) scaleX(0);
+    }
+
+    100% {
+        transform: translate(100%) scaleX(100%);
+    }
+}
+
+.tooltip {
+    z-index: 2;
+    display: none;
+    flex-direction: row-reverse;
+    position: absolute;
+    max-width: 256px;
+    right: 0;
+    top: 160px;
+    border-radius: 8px 0 0 8px;
+}
+
+.opened {
+    display: flex;
+    animation: tooltip-opener 150ms;
+}
+
+.tooltip-text {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.close-button {
+    min-height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px 0 0 8px;
+    border:none;
+}
+
+.close-button span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: rotate(-90deg);
+}
+
+ /* цветовые схемы */
+.light-theme .tooltip {
+    background-color: #ffffff;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .light-theme .tooltip-button {
+    background-color: #f2f2f2;
+  }
+  
+  .light-theme .tooltip-button:focus,
+  .light-theme .tooltip-button:hover
+   {
+    background-color: #6653d9;
+    color: #ffffff;
+    outline-color: #b6aaff;
+  }
+  
+  .tooltip-button:active {
+    opacity: 0.6;
+  }
+  
+  .light-theme .tooltip-button::after {
+    border-right-color: #6653d9;
+    border-top-color: #6653d9;
+  }
+  .light-theme .button{
+    background-color: #6653d9;
+    color: #ffffff;
+  }
+  .light-theme .button:focus,
+  .light-theme .button:hover{
+    background-color: #372b7e;
+    color: #ffffff;
+    outline-color: #b6aaff;
+  }
+  
